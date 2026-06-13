@@ -9,7 +9,7 @@ interface TimelineStripProps {
 
 const TimelineStrip = forwardRef<HTMLDivElement, TimelineStripProps>(
   function TimelineStrip({ selectedIndex, onSelect }, ref) {
-    const innerRef = useRef<HTMLDivElement>(null);
+    const innerRef = useRef<HTMLDivElement | null>(null);
     const drag = useRef({ on: false, sx: 0, sl: 0, moved: false });
 
     const setRefs = useCallback((node: HTMLDivElement | null) => {
